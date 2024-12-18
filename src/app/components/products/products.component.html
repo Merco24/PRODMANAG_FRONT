@@ -1,1 +1,40 @@
-<p class="text-primary d-flex justify-content-center w-100 text-decoration-underline">products works!</p>
+<form (ngSubmit)="insertData()">
+  <div class="form-group">
+    <label for="reference">Référence</label>
+    <input type="text" id="reference" class="text form-control">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" id="description" class="text form-control">
+  </div>
+  <div class="form-group">
+    <label for="quantite">Quantité</label>
+    <input type="number" id="quantite" class="text form-control">
+  </div>
+  <div class="form-group">
+    <label for="prix">Prix</label>
+    <input type="text" id="prix" class="text form-control">
+  </div>
+  <button class="btn btn-dark -sm mt-4" type="submit">Valider</button>
+</form>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Références</th>
+    <th scope="col">Description</th>
+    <th scope="col">Quantité</th>
+    <th scope="col">Prix</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let prod of products">
+    <th scope="row">{{prod.id}}</th>
+    <th>{{prod.reference}}</th>
+    <th>{{prod.description}}</th>
+    <th>{{prod.quantite}}</th>
+    <th>{{prod.prix}}</th>
+  </tr>
+  </tbody>
+</table>
