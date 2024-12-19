@@ -3,13 +3,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
 import {DataService} from '../../service/data.service';
 import {Product} from '../../product';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-products',
   imports: [
     ReactiveFormsModule,
     NgForOf,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
