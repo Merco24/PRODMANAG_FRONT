@@ -39,4 +39,12 @@ export class ProductsComponent implements OnInit{
       this.getProductData();
     })
   }
+
+  deleteData(id: any) {
+    console.log(id);
+    this.dataService.deleteData(id).subscribe(res=>{
+      //console.log(res);
+      this.getProductData();
+    })
+  }
 }

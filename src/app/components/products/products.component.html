@@ -29,6 +29,7 @@
     <th scope="col">Description</th>
     <th scope="col">Quantité</th>
     <th scope="col">Prix</th>
+    <th scope="col">Action</th>
   </tr>
   </thead>
   <tbody>
@@ -38,6 +39,8 @@
     <th>{{prod.description}}</th>
     <th>{{prod.quantite}}</th>
     <th>{{prod.prix}}</th>
+    <th>
+      <button class="btn btn-danger btn-sm" (click)="deleteData(prod.id)">Supprimer</button></th>
   </tr>
   </tbody>
 </table>
