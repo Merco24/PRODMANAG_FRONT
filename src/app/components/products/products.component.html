@@ -1,21 +1,24 @@
 <form (ngSubmit)="insertData()">
   <div class="form-group">
     <label for="reference">Référence</label>
-    <input type="text" id="reference" class="text form-control">
+    <input type="text" name="reference" class="text form-control" [(ngModel)]="product.reference">
   </div>
   <div class="form-group">
     <label for="description">Description</label>
-    <input type="text" id="description" class="text form-control">
+    <input type="text" name="description" class="text form-control" [(ngModel)]="product.description">
   </div>
   <div class="form-group">
     <label for="quantite">Quantité</label>
-    <input type="number" id="quantite" class="text form-control">
+    <input type="number" name="quantite" class="text form-control" [(ngModel)]="product.quantite">
   </div>
   <div class="form-group">
     <label for="prix">Prix</label>
-    <input type="text" id="prix" class="text form-control">
+    <input type="text" name="prix" class="text form-control" [(ngModel)]="product.prix">
   </div>
-  <button class="btn btn-dark -sm mt-4" type="submit">Valider</button>
+  <div class="d-flex w-25 justify-content-around start-0">
+    <button class="btn btn-dark -sm mt-4" type="submit">Valider</button>
+    <button class="btn btn-danger -sm mt-4" type="reset">Effacer</button>
+  </div>
 </form>
 
 <table class="table">

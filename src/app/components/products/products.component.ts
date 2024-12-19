@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
 import {DataService} from '../../service/data.service';
+import {Product} from '../../product';
 
 @Component({
   selector: 'app-products',
@@ -15,6 +16,7 @@ import {DataService} from '../../service/data.service';
 })
 export class ProductsComponent implements OnInit{
   products: any;
+  product = new Product;
   constructor(private dataService: DataService) {
   }
 
@@ -31,6 +33,10 @@ export class ProductsComponent implements OnInit{
   }
 
   insertData() {
-    console.log('Bonjour insertion test');
+    //console.log(this.product);
+    this.dataService.insertData(this.product).subscribe(res=>{
+      //console.log(res);
+      this.getProductData();
+    })
   }
 }
